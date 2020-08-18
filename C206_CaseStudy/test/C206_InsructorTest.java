@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class C206_CaseStudyTest {
+public class C206_InsructorTest {
 	
 	private Instructor instructor1;
 	private Instructor instructor2; 
