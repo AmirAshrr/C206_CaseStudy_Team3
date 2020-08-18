@@ -1,0 +1,47 @@
+
+public class ParentTest {
+	private String name; 
+	private String email;
+	private String address;
+	private int contact_num;
+	
+	public ParentTest(String name, String email, String address, int contact_num) {
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.contact_num = contact_num;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getContact_num() {
+		return contact_num;
+	}
+
+	public void setContact_num(int contact_num) {
+		this.contact_num = contact_num;
+	}
+	
+}
