@@ -44,6 +44,11 @@ public class InstructorDB {
 			}
 		}
 
+		
+		
 	}
-
+	
+	public static ArrayList<CCA> CCAList = new ArrayList<CCA>();
+	
+	
 }  // end of class 

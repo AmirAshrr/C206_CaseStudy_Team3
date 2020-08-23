@@ -121,12 +121,46 @@ public class C206_InsructorTest {
 	}
 	
 	@Test
-	public void viewStudents() { 
+	public void viewRegisteredStudents() { 
 		
-		// Test that 
+		// Test if the student array list is not null 
 		
-		assertEquals("Test if an appropriate message is displayed when array list size is 0 ", "Instructor information is not displayed", StudentDB.viewAllStudent());
+		assertNotNull("Test that the student array is not null: ", StudentDB.studentList); 
 		
+		// Test if an appropriate message is displayed when array list size is 0
+		
+		assertEquals("Test if an appropriate message is displayed when array list size is 0 ", "No students registered", StudentDB.viewAllRegisteredStudents());
+		
+		// 	Test if the array list size is 1, after a student registered
+	 
+		StudentDB.addStudent(null);
+		
+		assertEquals("Test that the array list size is > 0:  ", 1, StudentDB.studentList.size());
+	}
+	
+	@Test
+	public void viewCCAByDateandTime() { 
+		
+		//  Test if the cca array list is not null 
+		
+		assertNotNull("Test that the CCA array is not null: ", CCADB.CCAList); 
+		
+		// 	Test if the array list size is 1, after a CCA is added 
+		
+		
+		CCA cca1 = new CCA("Soccer", "Little League", 20, "Tuesday", 2, "Soccer Field", "Mr. Jack");
+		
+		CCADB.addCCA(cca1);
+		
+		assertEquals("Test that the array list size is > 0:  ", 1, CCADB.CCAList.size());
+		
+		// Test that the CCA date information will be displayed 
+		
+		assertEquals("Test that the CCA date information will be displayed: ", cca1.getWeek(), CCADB.CCAList.get(0).getWeek());
+		
+		// Test that the CCA date information will be displayed 
+		
+		assertEquals("Test that the CCA time information will be displayed: ", cca1.getTime(), CCADB.CCAList.get(0).getTime());
 		
 	}
 

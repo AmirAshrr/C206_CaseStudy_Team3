@@ -68,5 +68,22 @@ public class StudentDB {
 		return message;
 	}
 
+	public static String viewAllRegisteredStudents() {
+		
+		String output = ""; // empty string
+
+		if (studentList.size() == 0) {
+
+			output = "No students registered";
+
+		} else {
+
+		}
+
+		return output;
+		
+	}
+
+
 
 }
