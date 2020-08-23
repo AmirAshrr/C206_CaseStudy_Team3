@@ -66,7 +66,7 @@ Student s3;
 		
 	}
 	@Test
-	public void checkStudentIdTest() {
+	public void checkStudentIdTest() { 
 		StudentDB.addStudent(s1);
 		assertEquals("Test that s1 ID is 1",1, StudentDB.studentList.get(0).getId());
 		boolean s1idmsg = StudentDB.checkId5dLong(StudentDB.studentList.get(0).getId());
