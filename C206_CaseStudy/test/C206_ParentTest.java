@@ -31,7 +31,7 @@ public class C206_ParentTest {
 
 	@Test
 	public void doAddParentTest() {
-		//Test if the arrayList is not null
+		//Test if the arrayList is not null 
 		assertNotNull("Test if the arrayList is not null: ", ParentDBTest.parentList);
 		
 		// Test the size of arrayList is 0 before adding any parent
