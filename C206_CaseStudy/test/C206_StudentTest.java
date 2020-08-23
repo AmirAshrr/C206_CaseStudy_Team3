@@ -70,8 +70,8 @@ Student s3;
 		StudentDB.addStudent(s1);
 		assertEquals("Test that s1 ID is 1",1, StudentDB.studentList.get(0).getId());
 		boolean s1idmsg = StudentDB.checkId5dLong(StudentDB.studentList.get(0).getId());
-		assertEquals("id of s1 should return false",false, s1idmsg);
-		
+		assertEquals("id of s1 should return false",false,s1idmsg);
+		 
 		StudentDB.addStudent(s3);
 		assertEquals("Test that s3 ID is 33333",33333, StudentDB.studentList.get(1).getId());
 	    boolean s3idmsg = StudentDB.checkId5dLong(StudentDB.studentList.get(1).getId());
