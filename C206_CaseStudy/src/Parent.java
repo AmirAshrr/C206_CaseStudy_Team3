@@ -1,15 +1,17 @@
 
-public class ParentTest {
+public class Parent {
 	private String name; 
 	private String email;
 	private String address;
 	private int contact_num;
+	private int registration_ID;
 	
-	public ParentTest(String name, String email, String address, int contact_num) {
+	public Parent(String name, String email, String address, int contact_num, int registration_ID) {
 		this.name = name;
 		this.email = email;
 		this.address = address;
 		this.contact_num = contact_num;
+		this.registration_ID = registration_ID;
 	}
 
 	public String getName() {
@@ -44,4 +46,11 @@ public class ParentTest {
 		this.contact_num = contact_num;
 	}
 	
+	public int getRegistration_ID() {
+		return registration_ID;
+	}
+
+	public void setRegistration_ID(int registration_ID) {
+		this.registration_ID = registration_ID;
+	}
 }
