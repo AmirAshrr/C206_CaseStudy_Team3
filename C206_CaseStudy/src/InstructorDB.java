@@ -17,18 +17,33 @@ public class InstructorDB {
 	}
 
 	public static String viewAllInstructor() {
-		
-		String output = "" ;
-				
-		if (instructorList.size() == 0 ) { 
-			
+
+		String output = ""; // empty string
+
+		if (instructorList.size() == 0) {
+
 			output = "Instructor information is not displayed";
-		
-		} else { 
-			
+
+		} else {
+
 		}
-		
-		return output; 
-			
+
+		return output;
+
 	}
-}
+
+	public static void updateInstructorDetails(String name, String email, String password) {
+
+		for (Instructor i : instructorList) {
+
+			if (name.equals(i.getName())) {
+
+				i.setEmail(email);
+				i.setPassword(password);
+
+			}
+		}
+
+	}
+
+}  // end of class 

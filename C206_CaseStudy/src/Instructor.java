@@ -2,12 +2,12 @@
 public class Instructor {
 	
 	private String name;
-	private String CCA;
+	private String email;
+	private String password;
 
-	public Instructor(String name, String CCA) {
-		this.name = name;
-		this.CCA = CCA;
-		
+
+	public Instructor(String name, String email, String password) {
+
 	}
 
 	public String getName() {
@@ -18,12 +18,20 @@ public class Instructor {
 		this.name = name;
 	}
 
-	public String getCCA() {
-		return CCA;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCCA(String CCA) {
-		this.CCA = CCA;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	
