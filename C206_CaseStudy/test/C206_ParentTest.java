@@ -37,7 +37,7 @@ public class C206_ParentTest {
 		// Test the size of arrayList is 0 before adding any parent
 		assertEquals("Test the size of arrayList is 0 before adding any parent: " , 0 , ParentDBTest.parentList.size());
 		
-		// Test the size of arraylist is 1 after adding 1 parent 
+		// Test the size of arraylist is 1 after adding 1 parent  
 		ParentDBTest.addParent(parent1);
 		assertEquals("Test the size of arraylist is 1 after adding 1 parent: ", 1 , ParentDBTest.parentList.size());
 		
