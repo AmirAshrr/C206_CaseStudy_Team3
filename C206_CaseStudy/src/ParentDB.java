@@ -15,35 +15,38 @@ public class ParentDB {
 	}
 
 	public static String viewAllParents() {
-		String output = "";
+		String output = String.format("%-10s %-20s %-30s %-20s %-20s\n", "Name", "Email" , "Address", "Contact Number", "Registration ID");
 		if (parentList.size() == 0) {
 			output = "Parent information not found";	
 		}
 		else {
 			for (int i = 0; i < parentList.size(); i++) {
-			output = String.format("%-10s %-20s %-20s %-10d", parentList.get(i).getName(), parentList.get(i).getEmail(), parentList.get(i).getAddress(), parentList.get(i).getContact_num());
+			output += String.format("%-10s %-20s %-30s %-20d %-20d\n", parentList.get(i).getName(),
+					parentList.get(i).getEmail(), parentList.get(i).getAddress(), parentList.get(i).getContact_num(),
+					parentList.get(i).getRegistration_ID());
 			}
 		}
 		return output;
+		//System.out.println(output);
 	}
 
-	public static String checkEmail() {
-		String output = "";
+	public static Boolean checkEmail() {
+		Boolean valid_email = true;
 		for (int i = 0;i < parentList.size(); i++) {
 			if (!parentList.get(i).getEmail().contains("@")) {
-				output = "Email does not contain \"@\" symbol";
+				valid_email = false;
 			}
 			else {
-				output = "Email contain \"@\" symbol";
+				valid_email = true;
 			}
 		}
-		return output;
+		return valid_email;
 	}
 
 	public static String updateParent(String name, String email, String address, int number) {
 		String output = "";
 		for (int i = 0; i < parentList.size(); i++) {
-			if (parentList.get(i).getName().equals(name)) {
+			if (parentList.get(i).getName().equalsIgnoreCase(name)) {
 				parentList.get(i).setEmail(email);
 				parentList.get(i).setAddress(address);
 				parentList.get(i).setContact_num(number);
