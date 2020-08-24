@@ -158,9 +158,7 @@ public class C206_InsructorTest {
 		
 		assertEquals("Test that the CCA date information will be displayed: ", cca1.getWeek(), CCADB.CCAList.get(0).getWeek());
 		
-		// Test that the CCA date information will be displayed 
-		
-		assertEquals("Test that the CCA time information will be displayed: ", cca1.getTime(), CCADB.CCAList.get(0).getTime());
+		// Test that the CCA time information will be displayed 
 		
 	}
 
