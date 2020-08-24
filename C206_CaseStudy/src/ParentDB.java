@@ -30,16 +30,16 @@ public class ParentDB {
 		//System.out.println(output);
 	}
 
-	public static Boolean checkEmail() {
+	public static Boolean checkEmail(String email) {
 		Boolean valid_email = true;
-		for (int i = 0;i < parentList.size(); i++) {
-			if (!parentList.get(i).getEmail().contains("@")) {
+		//for (int i = 0;i < parentList.size(); i++) {
+			if (!email.contains("@")) {
 				valid_email = false;
 			}
 			else {
 				valid_email = true;
 			}
-		}
+		//}
 		return valid_email;
 	}
 
