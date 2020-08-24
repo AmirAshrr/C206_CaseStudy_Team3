@@ -1,11 +1,11 @@
 
 public class CCAMain {
-
+	// Create by OngJunJie at 24/08/2020
 	public static void main(String[] args) {
 		start();
 	}
 
-	private static void start() {
+	static void start() {
 
 		int option = 0;
 		while (option != 5) {
