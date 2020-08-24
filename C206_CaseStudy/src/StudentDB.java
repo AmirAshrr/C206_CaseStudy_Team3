@@ -36,16 +36,19 @@ public class StudentDB {
 	}
 		return output;
 	}
-	public static void updateStudentDetails(int id, int grade, String class1, String classroomTeacher) {
-		
+	public static String updateStudentDetails(int id, String name,int grade, String class1, String classroomTeacher) {
+		String message = "Update unsuccessful";
 		for(Student s: studentList) {
 			if(id==s.getId()) {
+				s.setName(name);
 				s.setClassroomTeacher(classroomTeacher);
 				s.setStudentClass(class1);
 				s.setGrade(grade);
+				message = "Update successful";
 				
 			}
-		}
+			
+		}return message;
 		 
 	}
 	public static boolean checkId5dLong(int id) {
