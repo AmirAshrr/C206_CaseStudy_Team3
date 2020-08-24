@@ -15,10 +15,10 @@ public static ArrayList<CCA> CCAList = new ArrayList<CCA>();
 	public static void showCCAMenu() {
 		System.out.println("CCA Menu");
 		Helper.line(30, "-");
-		System.out.println("1. View CCA");
-		System.out.println("2. Add CCA");
-		System.out.println("3. Delete CCA");
-		System.out.println("4. Update CCA");
+		System.out.println("1. Add CCA");
+		System.out.println("2. Delete CCA");
+		System.out.println("3. Update CCA");
+		System.out.println("4. View CCA");
 		System.out.println("5. Quit");
 		Helper.line(30, "-");
 	}
@@ -56,13 +56,9 @@ public static ArrayList<CCA> CCAList = new ArrayList<CCA>();
 		
 	}
 	
-	
-		
-	
-	
-
-	public static void removeCCA(String remove) {
+	public static String removeCCA(String remove) {
 		boolean isTrue = false;
+		String output = "";
 		for (int z = 0; z < CCAList.size(); z ++) {
 			if(CCAList.get(z).getTitle().equals(remove)) {
 				CCAList.remove(z);
@@ -71,30 +67,35 @@ public static ArrayList<CCA> CCAList = new ArrayList<CCA>();
 		}
 		
 		if(isTrue == false) {
-			System.out.println("CCA does not exist!");
+			//System.out.println("CCA does not exist!");
+			output += "CCA does not exist!";
 		}
 		
 		else {
-			System.out.println("CCA removed!");
+			//System.out.println("CCA removed!");
+			output += "CCA removed!";
 		}
+		return output;
 	}
 	
-	public static void addCCA(ArrayList<CCA> CCAList, CCA ccac) {
+	public static String addCCA(ArrayList<CCA> CCAList, CCA ccac) {
+		String output = "";
 		if((ccac.getClass_Size() <= 50) && (ccac.getWeek().equalsIgnoreCase("Monday")
 				|| ccac.getWeek().equalsIgnoreCase("Tuesday") || ccac.getWeek().equalsIgnoreCase("Wednesday") || 
 				ccac.getWeek().equalsIgnoreCase("Thursday") || ccac.getWeek().equalsIgnoreCase("Friday")))
 		{
 			CCAList.add(ccac);
-			System.out.println("CCA sucessfully added!");
+			//System.out.println("CCA sucessfully added!");
+			output += "CCA sucessfully added!";
 		}
 		
 		else {
-			System.out.println("Invalid input!");
+			//System.out.println("Invalid input!");
+			output += "Invalid input!";
 		}
+		return output;
 	}
 	
-
-
 	public static void updateCCADetails(String title, String description, int class_size, String week, String time, String venue,
 			String instructor_name) {
 		for(CCA i:CCAList) {
