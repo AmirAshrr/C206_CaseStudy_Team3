@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+//Create by Adillah at 24/08/2020
 
 public class InstructorDB {
 
@@ -10,47 +11,53 @@ public class InstructorDB {
 
 	}
 
-	public static void removeInstructor(Instructor instructor) {
-
-		instructorList.remove(instructor);
-
-	}
-
-	public static String viewAllInstructor() {
-
-		String output = ""; // empty string
-
-		if (instructorList.size() == 0) {
-
-			output = "Instructor information is not displayed";
-
-		} else {
-
+	public static String removeInstructor(String name) {
+		String message = "Delete unsuccessful";
+		for(Instructor i: instructorList) {
+			if(i.getName().equals(name)) {
+				instructorList.remove(i);
+				message = "Delete successful";
+			}
+			
 		}
-
-		return output;
+		return message;
+		
 
 	}
 
-	public static void updateInstructorDetails(String name, String email, String password) {
+	public static String viewAllInstructors() {
+		String output = "";
+		if(instructorList.size() == 0) {
+			output = "Instructor list is empty";
+		}else {
+			output = String.format("%-15s %-15s\n", "NAME","EMAIL");
+			
+			for(Instructor i: instructorList) {
+				
+				String name = i.getName();
+				String email = i.getEmail();
+				output+=String.format("%-15s %-15s\n", name,email);
+		      
+			}
+		
+	}
+		return output;
+	}
 
+	public static String updateInstructorDetails(String name, String email, String password) {
+		String message = "Update unsuccessful";
 		for (Instructor i : instructorList) {
-
 			if (name.equals(i.getName())) {
-
 				i.setEmail(email);
 				i.setPassword(password);
-
+				message = "Update successful";
 			}
-		}
-
-		
-		
+		}return message;
 	}
 	
-	public static ArrayList<CCA> CCAList = new ArrayList<CCA>();
 	
 	
 	
 	
-}  // end of class 
+	
+}

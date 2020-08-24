@@ -1,9 +1,10 @@
 public class StudentMain {
+	// Create by Amir at 24/08/2020
 
 	private static final int length = 30;
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-    StudentMain sMain = new StudentMain();
+
+	StudentMain sMain = new StudentMain();
     sMain.start();
 	}
 	public void start() {

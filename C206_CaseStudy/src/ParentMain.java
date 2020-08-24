@@ -101,6 +101,9 @@ public class ParentMain {
 	private static void updateParentInput(String name, int i, int updateOption) {
 		if (updateOption == 1) {
 			String email = Helper.readString("Enter your new Email: ");
+			while (ParentDB.checkEmail(email) == false) {
+				email = Helper.readString("Missing \"@\"\nEnter email: ");	
+			}
 			String address = ParentDB.parentList.get(i).getAddress();
 			int contact_Num = ParentDB.parentList.get(i).getContact_num();
 			ParentDB.updateParent(name, email, address, contact_Num);
@@ -120,6 +123,9 @@ public class ParentMain {
 		}
 		else if (updateOption == 4) {
 			String email = Helper.readString("Enter your new Email: ");
+			while (ParentDB.checkEmail(email) == false) {
+				email = Helper.readString("Missing \"@\"\nEnter email: ");	
+			}
 			String  address = Helper.readString("Enter your new Address: ");
 			int contact_Num = Helper.readInt("Enter your new contact number: ");
 			ParentDB.updateParent(name, email, address, contact_Num);
