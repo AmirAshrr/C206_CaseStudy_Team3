@@ -3,11 +3,13 @@ public class ParentMain {
 
 	
 	public static void main(String[] args) {
+		//ParentMain pm = new ParentMain();
+		//pm.start();
 		start();
 	}
 
-	private static void start() {
-		
+	static void start() {
+
 		int option = 0;
 		
 		while (option != 6) {
@@ -19,6 +21,9 @@ public class ParentMain {
 				Helper.line(30, "-");
 				String name = Helper.readString("Enter name: ");
 				String email = Helper.readString("Enter email: ");
+				while (ParentDB.checkEmail(email) == false) {
+					email = Helper.readString("Missing \"@\"\nEnter email: ");	
+				}
 				String address = Helper.readString("Enter address: ");
 				int contact_num = Helper.readInt("Enter contact number: ");
 				int default_registrationNum = 00000;
