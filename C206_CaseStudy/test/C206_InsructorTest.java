@@ -148,7 +148,7 @@ public class C206_InsructorTest {
 		// 	Test if the array list size is 1, after a CCA is added 
 		
 		
-		CCA cca1 = new CCA("Soccer", "Little League", 20, "Tuesday", 2, "Soccer Field", "Mr. Jack");
+		CCA cca1 = new CCA("Soccer", "Little League", 20, "Tuesday", "2", "Soccer Field", "Mr. Jack");
 		
 		CCADB.addCCA(cca1);
 		
@@ -159,6 +159,8 @@ public class C206_InsructorTest {
 		assertEquals("Test that the CCA date information will be displayed: ", cca1.getWeek(), CCADB.CCAList.get(0).getWeek());
 		
 		// Test that the CCA time information will be displayed 
+		
+		assertEquals("Test that the CCA date information will be displayed: ", cca1.gettime(), CCADB.CCAList.get(0).gettime());
 		
 	}
 
