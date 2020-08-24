@@ -5,11 +5,11 @@ public class CCA {
 	private String description; 
 	private int class_size;
 	private String week; 
-	private float time;
+	private String time;
 	private String venue;
 	private String instructor_name; 
 	
-	public CCA(String title, String description, int class_size, String week, int time, String venue, String instructor_name) {
+	public CCA(String title, String description, int class_size, String week, String time, String venue, String instructor_name) {
 	
 	this.title = title;
 	this.description = description; 
@@ -20,6 +20,8 @@ public class CCA {
 	this.instructor_name = instructor_name;
 }
 	
+
+
 	public String getTitle() {
 		return title;
 		
@@ -56,11 +58,11 @@ public class CCA {
 		this.week = week; 
 	}
 	
-	public float getTime() {
+	public String gettime() {
 		return time;
 	}
 	
-	public void setTime(float time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 	
@@ -79,5 +81,22 @@ public class CCA {
 	public void setInstuructor_Name(String instructor_name) {
 		this.instructor_name = instructor_name;
 	}
+
+	public String toString() {
+		String output = "";			
+		output += "Title: " + title + "\n"; 
+		output += "Description: " + description + "\n"; 
+		output += "Class Size: " + class_size + "\n"; 
+		output += "Week: " + week + "\n"; 
+		output += "Time: " + time + "\n"; 
+		output += "Venue: " + venue + "\n"; 
+		output += "Instructor name: " + instructor_name + "\n";
+		return output;
+		
+	}
+
+
+	
+	
 	
 }
