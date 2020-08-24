@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ParentDB {
-	
+	// Create by OngJunJie at 24/08/2020	
 	public static ArrayList<Parent> parentList = new ArrayList<Parent>();
 	
 	public static void addParent(Parent parent) {
