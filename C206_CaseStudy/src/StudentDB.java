@@ -84,6 +84,19 @@ public class StudentDB {
 		
 	}
 
-
+	public static String deleteStudent(int id) {
+		// TODO Auto-generated method stub
+		String message = "Delete unsuccessful";
+		for(Student s: studentList) {
+			if(s.getId() == id) {
+				studentList.remove(s);
+				message = "Delete successful";
+			}
+			
+		}
+		return message;
+		
+		
+	}
 
 }
