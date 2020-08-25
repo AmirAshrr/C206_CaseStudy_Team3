@@ -77,7 +77,11 @@ public class C206_ParentTest {
 		
 		// Test if an appropriate message is displayed when arrayList size is >0		
 		ParentDB.addParent(parent1);
-		assertEquals("Test if an appropriate message is displayed when arrayList size is 0" ,String.format("%-10s %-20s %-20s %-10d", ParentDB.parentList.get(0).getName(), ParentDB.parentList.get(0).getEmail(), ParentDB.parentList.get(0).getAddress(), ParentDB.parentList.get(0).getContact_num()), ParentDB.viewAllParents());
+		String output = String.format("%-10s %-20s %-30s %-20s %-20s\n", "Name", "Email" , "Address", "Contact Number", "Registration ID");
+		output += String.format("%-10s %-20s %-30s %-20d %-20d\n", ParentDB.parentList.get(0).getName(),
+				ParentDB.parentList.get(0).getEmail(), ParentDB.parentList.get(0).getAddress(), ParentDB.parentList.get(0).getContact_num(),
+				ParentDB.parentList.get(0).getRegistration_ID());
+		assertEquals("Test if an appropriate message is displayed when arrayList size is 0" ,output, ParentDB.viewAllParents());
 	
 	}
 	
@@ -94,12 +98,12 @@ public class C206_ParentTest {
 		assertEquals("Test the size of arraylist is 1 after adding 1 parent: ", 1 , ParentDB.parentList.size());
 
 		// Test if an appropriate message is displayed when the email does not contains "@" symbol
-		assertEquals("Test if an appropriate message is displayed when the email does not contains \"@\" symbol", "Email does not contain \"@\" symbol", ParentDB.checkEmail());
+		assertEquals("Test if an appropriate message is displayed when the email does not contains \"@\" symbol", false , ParentDB.checkEmail(ParentDB.parentList.get(0).getEmail()));
 		ParentDB.removeParent(parent1);
 		
 		// Test if an appropriate message is displayed when the email contains "@" symbol
 		ParentDB.addParent(parent2);
-		assertEquals("Test if an appropriate message is displayed when the email does not contains \"@\" symbol", "Email contain \"@\" symbol", ParentDB.checkEmail());
+		assertEquals("Test if an appropriate message is displayed when the email does not contains \"@\" symbol", true, ParentDB.checkEmail(ParentDB.parentList.get(0).getEmail()));
 
 	}
 	
