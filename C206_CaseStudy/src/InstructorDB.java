@@ -13,16 +13,14 @@ public class InstructorDB {
 
 	public static String removeInstructor(String name) {
 		String message = "Delete unsuccessful";
-		for(Instructor i: instructorList) {
-			if(i.getName().equals(name)) {
+		for(int i = 0;i< instructorList.size(); i++) {
+			if(instructorList.get(i).getName().equals(name)) {
 				instructorList.remove(i);
 				message = "Delete successful";
 			}
 			
 		}
 		return message;
-		
-
 	}
 
 	public static String viewAllInstructors() {
