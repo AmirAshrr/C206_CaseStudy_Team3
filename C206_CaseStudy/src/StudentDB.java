@@ -10,11 +10,6 @@ public class StudentDB {
 		
 	}
 
-	public static void deleteStudent(Student s) {
-		// TODO Auto-generated method stub
-		studentList.remove(s);
-		
-	}
     
 	public static String viewStudents() {
 		String output = "";
@@ -90,16 +85,15 @@ public class StudentDB {
 	public static String deleteStudent(int id) {
 		// TODO Auto-generated method stub
 		String message = "Delete unsuccessful";
-		for(Student s: studentList) {
-			if(s.getId() == id) {
-				studentList.remove(s);
+		for(int i = 0; i<studentList.size();i++) {
+			if(studentList.get(i).getId() == id) {
+				
+				studentList.remove(i);
 				message = "Delete successful";
 			}
 			
 		}
 		return message;
-		
-		
 	}
 
 }
