@@ -117,7 +117,7 @@ cca2 = new CCA("Bakery", "Sweet", 15, "Wed", "3pm", "Kitchen", "Ho");
 		CCADB.removeCCA(CCADB.CCAList.get(0).getTitle());
 		assertEquals("Test that the size of the category arrayList is 1 after adding any CCA", 0, CCADB.CCAList.size());
 
-	
+
 				
 		
 	}
@@ -125,9 +125,3 @@ cca2 = new CCA("Bakery", "Sweet", 15, "Wed", "3pm", "Kitchen", "Ho");
 
 
 }
-	
-	
-	
-	
-
-

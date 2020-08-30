@@ -19,6 +19,7 @@ Student s3;
 	public void tearDown() throws Exception {
 	s1 = null;
 	s2 = null;
+	s3 = null;
 	StudentDB.studentList.clear();
 	}
 
@@ -35,9 +36,8 @@ Student s3;
 	@Test
 	public void deleteStudentTest() {
 		StudentDB.addStudent(s1); //method is proven to add Student in public void addStudentTest()
-		StudentDB.deleteStudent(s1);
-		assertEquals("No student is found in the arraylist", 0, StudentDB.studentList.size());
-		
+		assertSame("Student's name in arraylist matches with s1 name", s1, StudentDB.studentList.get(0));
+		assertEquals("Sucess message is displayed", "Delete successful", StudentDB.deleteStudent(1));
 		
 	}
 	@Test
@@ -59,9 +59,11 @@ Student s3;
 	@Test
 	public void updateStudentTest() {
 		StudentDB.addStudent(s1);
-		StudentDB.updateStudentDetails(1, 6,"W66", "David Tan");
+		String message = StudentDB.updateStudentDetails(1,"Beckaroo", 6,"W66", "David Tan");
+		assertEquals("Test that message successful is displayed", "Update successful",message);
 		assertEquals("Test that s1 grade is changed to 6", 6, StudentDB.studentList.get(0).getGrade());
 		assertEquals("Test that s1 class is changed to W66", "W66", StudentDB.studentList.get(0).getStudentClass());
+		assertEquals("Test that s1 name is changed to Beckaroo", "Beckaroo", StudentDB.studentList.get(0).getName());
 		assertEquals("Test that s1 teacher is changed to David Tan", "David Tan", StudentDB.studentList.get(0).getClassroomTeacher());
 		
 	}
@@ -90,6 +92,8 @@ Student s3;
 		boolean uniquemessage = StudentDB.checkUniqueId(657);
 		assertEquals("Message displayed should return true",true,uniquemessage);
 	}
+	
+	
 
 	
 	
