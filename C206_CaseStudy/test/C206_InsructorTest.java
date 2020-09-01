@@ -101,7 +101,7 @@ public class C206_InsructorTest {
         
         // Test if an appropriate message is displayed when array list size is 0
         
-        assertEquals("Test if an appropriate message is displayed when array list size is 0 ", "Instructor information is not displayed", InstructorDB.viewAllInstructors());
+        assertEquals("Test if an appropriate message is displayed when array list size is 0 ", "Instructor list is empty", InstructorDB.viewAllInstructors());
         
         //     Test if the array list size is 1
         
